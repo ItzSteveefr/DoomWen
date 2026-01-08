@@ -9,39 +9,33 @@
     pointer-events: none;
 }
 
-/* shared overlay styles */
 .transition-overlay {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-
     transform: scaleY(1);
     transform-origin: top;
     will-change: transform;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
-/* image layers */
 .transition-overlay.overlay-1 {
-    background-image: url("/public/hero/img1.jpg");
+    background-color: var(--fg);
 }
 
 .transition-overlay.overlay-2 {
-    background-image: url("/public/hero/img2.jpg");
+    background-color: var(--accent1);
 }
 
 .transition-overlay.overlay-3 {
-    background-image: url("/public/hero/img3.jpg");
+    background-color: var(--accent2);
 }
 
 .transition-overlay.overlay-4 {
-    background-image: url("/public/hero/img4.jpg");
+    background-color: var(--accent3);
 }
 
 .transition-overlay.overlay-5 {
-    background-image: url("/img5.jpg");
+    background-color: var(--accent4);
 }

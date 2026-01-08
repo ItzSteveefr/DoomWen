@@ -1,7 +1,7 @@
 {
-  "name": "otis-valen",
+  "name": "doomwen-portfolio",
   "version": "1.0.0",
-  "description": "Otis Valen landing page animation built with GSAP, Lenis, and Vite.",
+  "description": "DoomWen Minecraft plugin developer portfolio with smooth animations, scroll effects, and multi-page design.",
   "main": "index.js",
   "scripts": {
     "postinstall": "node -e \"if (process.platform!=='win32'){require('child_process').execSync('chmod +x node_modules/.bin/*',{stdio:'inherit'})}\"",
@@ -15,9 +15,11 @@
     "gsap",
     "lenis",
     "scroll-animation",
+    "minecraft",
+    "plugin-portfolio",
     "frontend"
   ],
-  "author": "Worapon Jintajirakul",
+  "author": "Jithin / DoomWen",
   "license": "ISC",
   "engines": {
     "node": ">=18"

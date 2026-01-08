@@ -42,10 +42,7 @@
 
 .contact p.contact-card-header {
     padding: 0.25em 0.5em;
-    border-radius: 0.25em;
-    width: max-content;
-    background-color: var(--fg);
-    color: var(--bg);
+    text-decoration: underline;
 }
 
 .contact .contact-symbol {

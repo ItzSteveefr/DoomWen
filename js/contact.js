@@ -7,21 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let animationId = null;
   let mouseMoveListener = null;
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        alert(`Copied to clipboard: ${text}`);
-      })
-      .catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-  };
-
-  const openLink = (url) => {
-    window.open(url, "_blank");
-  };
-
   const config = {
     imageCount: 10,
     imageLifespan: 750,
@@ -166,37 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
       stopAnimation();
     }
   };
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const emailElement = document.querySelector(".contact-email");
-    const phoneElement = document.querySelector(".contact-phone");
-    const mcshopElement = document.querySelector(".contact-mcshop");
-    const builtByBitElement = document.querySelector(".contact-built-by-bit");
-
-    if (emailElement) {
-      emailElement.addEventListener("click", () => {
-        copyToClipboard(emailElement.textContent);
-      });
-    }
-
-    if (phoneElement) {
-      phoneElement.addEventListener("click", () => {
-        copyToClipboard(phoneElement.textContent);
-      });
-    }
-
-    if (mcshopElement) {
-      mcshopElement.addEventListener("click", () => {
-        openLink("https://mcshop.com");
-      });
-    }
-
-    if (builtByBitElement) {
-      builtByBitElement.addEventListener("click", () => {
-        openLink("https://builtbybit.com");
-      });
-    }
-  });
 
   window.addEventListener("resize", handleResize);
 

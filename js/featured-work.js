@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const indicatorContainer = document.querySelector(
-      ".featured-work-indicator"
+      ".featured-work-indicator",
     );
 
     indicatorContainer.innerHTML = "";
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     imagesContainer.innerHTML = "";
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 7; i++) {
       const featuredImgCard = document.createElement("div");
       featuredImgCard.className = `featured-img-card featured-img-card-${i}`;
 

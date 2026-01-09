@@ -159,11 +159,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const discordBtn = document.querySelector(".copy-discord");
-  if (!discordBtn) return;
+const btn = document.querySelector(".copy-discord");
+const icon = btn?.querySelector(".copy-icon");
 
-  discordBtn.addEventListener("click", () => {
-    navigator.clipboard.writeText("thedoomwen#1234");
-  });
+btn?.addEventListener("click", async () => {
+  await navigator.clipboard.writeText("thedoomwen");
+
+  icon.classList.replace("bi-copy", "bi-check2");
+  icon.classList.add("copied");
+
+  setTimeout(() => {
+    icon.classList.replace("bi-check2", "bi-copy");
+    icon.classList.remove("copied");
+  }, 1500);
 });

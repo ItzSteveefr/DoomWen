@@ -77,3 +77,13 @@
         display: none;
     }
 }
+
+.copy-icon {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.copy-icon.copied {
+    transform: scale(0.8);
+}

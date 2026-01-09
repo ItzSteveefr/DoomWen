@@ -127,28 +127,21 @@ const initHoverAnimations = () => {
     const overlay = item.querySelector(".work-hover-overlay");
     const button = item.querySelector(".work-hover-btn");
 
-    gsap.set(overlay, { y: 30, opacity: 0 });
-    gsap.set(button, { y: 10, opacity: 0 });
+    gsap.set(button, {
+      opacity: 0,
+      y: 12,
+    });
 
-    const hoverTl = gsap.timeline({ paused: true });
+    const hoverTl = gsap.timeline({
+      paused: true,
+      defaults: { ease: "power4.out" },
+    });
 
-    hoverTl
-      .to(overlay, {
-        y: 0,
-        opacity: 1,
-        duration: 0.3,
-        ease: "power3.out",
-      })
-      .to(
-        button,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.25,
-          ease: "power3.out",
-        },
-        "-=0.15",
-      );
+    hoverTl.to(button, {
+      opacity: 1,
+      y: 0,
+      duration: 0.45,
+    });
 
     item.addEventListener("mouseenter", () => hoverTl.play());
     item.addEventListener("mouseleave", () => hoverTl.reverse());
@@ -157,6 +150,4 @@ const initHoverAnimations = () => {
 
 initHoverAnimations();
 
-window.addEventListener("resize", () => {
-  initHoverAnimations();
-});
+window.addEventListener("resize", initHoverAnimations);

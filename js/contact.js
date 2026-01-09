@@ -158,3 +158,12 @@ document.addEventListener("DOMContentLoaded", () => {
     startAnimation();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const discordBtn = document.querySelector(".copy-discord");
+  if (!discordBtn) return;
+
+  discordBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText("thedoomwen#1234");
+  });
+});

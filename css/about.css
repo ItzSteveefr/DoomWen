@@ -118,23 +118,6 @@
     transform: translate(-50%, -50%) rotate(-60deg);
 }
 
-/* about - skills */
-.skills {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 4em 2em 4em 2em;
-}
-
-.skills .skills-copy {
-    margin: 0 auto;
-    padding: 2em;
-    width: max-content;
-    text-align: center;
-    border: 0.2em dashed var(--fg);
-    border-radius: 1em;
-}
-
 /* about - stats */
 /* About - stats section */
 .stats {

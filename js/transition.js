@@ -1,8 +1,6 @@
 import gsap from "gsap";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded");
-
   revealTransition();
 
   function revealTransition() {
@@ -67,27 +65,21 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
 
-      console.log("Link clicked:", href);
-      console.log("Current path:", window.location.pathname);
-
       if (
         href &&
         (href.startsWith("http") ||
           href.startsWith("mailto:") ||
           href.startsWith("tel:"))
       ) {
-        console.log("External link - allowing default");
         return;
       }
 
       if (isSamePage(href)) {
-        console.log("Same page detected - preventing navigation");
         event.preventDefault();
         closeMenuIfOpen();
         return;
       }
 
-      console.log("Different page - doing transition");
       event.preventDefault();
 
       animateTransition().then(() => {

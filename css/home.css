@@ -339,3 +339,9 @@
         border-radius: 1em;
     }
 }
+
+@media (max-width: 768px) {
+    .hide-on-phone {
+        display: none;
+    }
+}

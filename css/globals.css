@@ -145,6 +145,12 @@ p.mn {
     font-size: 7rem;
 }
 
+@media (max-width: 767px) {
+    .contact-cta {
+        bottom: 100px;
+    }
+}
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;

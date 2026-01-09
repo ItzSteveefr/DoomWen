@@ -361,7 +361,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-left: 15rem;
 }
 
 /* Button container */
@@ -369,6 +368,7 @@
     position: relative;
     display: inline-block;
     margin: 40px auto 20px auto;
+    margin-left: 8.5rem;
 }
 
 /* Button itself */
@@ -437,6 +437,57 @@
 /* Hide on desktop (your original behavior) */
 @media (min-width: 1001px) {
     .button-wrapper {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero .hero-header.hero-header-1 {
+        margin-left: 4.7rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero .hero-header.hero-header-2 {
+        margin-right: 5rem;
+    }
+}
+
+/* Mobile "More details" button inside featured images */
+@media (max-width: 1000px) {
+    .featured-title-img {
+        position: relative;
+    }
+
+    .mobile-details-btn {
+        position: absolute;
+        bottom: 0.75em;
+        left: 0.75em;
+
+        padding: 0.25em 0.5em;
+        border-radius: 0.25em;
+        width: max-content;
+
+        background-color: var(--fg);
+        color: var(--bg);
+
+        margin: 0;
+        z-index: 5;
+    }
+
+    .mobile-details-btn a {
+        color: inherit;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+        font-size: 0.75rem;
+    }
+}
+
+/* Ensure it never appears on desktop */
+@media (min-width: 1001px) {
+    .mobile-details-btn {
         display: none !important;
     }
 }

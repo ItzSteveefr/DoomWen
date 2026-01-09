@@ -120,60 +120,118 @@
     }
 }
 
-/* ===== Desktop hover interaction ===== */
+/* "More details" button: always visible on mobile, appears on hover on desktop */
+@media (max-width: 1000px) {
+    /* Ensure image wrapper can anchor absolute button */
+    .work-item-img {
+        position: relative;
+    }
+
+    .mobile-details-btn {
+        position: absolute;
+        bottom: 0.75em;
+        right: 0.75em;
+
+        padding: 0.25em 0.55em;
+        border-radius: 0.25em;
+        width: max-content;
+
+        background-color: white;
+        color: var(--bg);
+
+        z-index: 5;
+
+        /* subtle depth */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+
+        /* mobile interaction */
+        transition:
+            transform 0.12s ease,
+            box-shadow 0.12s ease,
+            background-color 0.12s ease;
+
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        display: block;
+    }
+
+    .mobile-details-btn a {
+        color: var(--bg);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+        font-size: 0.75rem;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* Press / tap animation */
+    .mobile-details-btn:active {
+        transform: translateY(2px) scale(0.98);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Desktop: button appears on image hover, slightly bigger */
 @media (min-width: 1001px) {
     .work-item-img {
         position: relative;
     }
 
-    /* Frosted overlay */
-    .work-hover-overlay {
+    .mobile-details-btn {
         position: absolute;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        bottom: 1.25em;
+        right: 1.25em;
 
-        padding: 1.25em;
+        padding: 0.4em 1em;
+        border-radius: 0.3em;
+        width: max-content;
 
-        background: rgba(0, 0, 0, 0.35);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background-color: white;
+        color: var(--bg);
+
+        z-index: 5;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+
+        transition:
+            opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.14s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.12s ease,
+            background-color 0.12s ease;
 
         opacity: 0;
-        transform: translateY(20px);
         pointer-events: none;
+        transform: translateY(8px) scale(1.04);
 
-        transition:
-            opacity 0.25s ease,
-            transform 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        display: block;
     }
 
-    /* Button */
-    .work-hover-btn {
-        padding: 0.35em 0.65em;
-        border-radius: 0.35em;
-
-        background: rgba(0, 0, 0, 0.75);
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.8rem;
-        font-weight: 500;
-
-        transition:
-            transform 0.2s ease,
-            background-color 0.2s ease;
-    }
-
-    .work-hover-btn:hover {
-        background: rgba(0, 0, 0, 0.9);
-        transform: translateY(-2px);
-    }
-
-    /* Hover trigger */
-    .work-item:hover .work-hover-overlay {
+    .work-item-img:hover .mobile-details-btn,
+    .work-item-img:focus-within .mobile-details-btn {
         opacity: 1;
-        transform: translateY(0);
         pointer-events: auto;
+        transform: translateY(0) scale(1.08);
+    }
+
+    .mobile-details-btn a {
+        color: var(--bg);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1rem;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .mobile-details-btn:active {
+        transform: translateY(2px) scale(1.04);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
 }

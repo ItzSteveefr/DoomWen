@@ -132,12 +132,6 @@
         bottom: 0.75em;
         right: 0.75em;
 
-        text-transform: uppercase;
-        font-family: supply-mono;
-        font-size: 0.875rem;
-        font-weight: 500;
-        line-height: 1.125;
-
         padding: 0.25em 0.55em;
         border-radius: 0.25em;
         width: max-content;
@@ -167,9 +161,12 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4em;
-        font-size: 0.75rem;
-        line-height: 1;
+        font-size: 0.875rem;
+        line-height: 1.125;
         white-space: nowrap;
+        text-transform: uppercase;
+        font-family: supply-mono;
+        font-weight: 500;
     }
 
     /* Press / tap animation */
@@ -230,9 +227,12 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5em;
-        font-size: 1rem;
-        line-height: 1;
+        font-size: 0.875rem;
+        line-height: 1.125;
         white-space: nowrap;
+        text-transform: uppercase;
+        font-family: supply-mono;
+        font-weight: 500;
     }
 
     .mobile-details-btn:active {

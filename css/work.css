@@ -132,6 +132,12 @@
         bottom: 0.75em;
         right: 0.75em;
 
+        text-transform: uppercase;
+        font-family: supply-mono;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.125;
+
         padding: 0.25em 0.55em;
         border-radius: 0.25em;
         width: max-content;

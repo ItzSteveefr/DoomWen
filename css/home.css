@@ -469,8 +469,8 @@
         border-radius: 0.25em;
         width: max-content;
 
-        background-color: rgba(0, 0, 0, 0.82);
-        color: #fff;
+        background-color: white;
+        color: var(--bg);
 
         z-index: 5;
 
@@ -488,7 +488,7 @@
     }
 
     .mobile-details-btn a {
-        color: inherit;
+        color: var(--bg);
         text-decoration: none;
         display: inline-flex;
         align-items: center;
@@ -501,7 +501,7 @@
     /* Press / tap animation */
     .mobile-details-btn:active {
         transform: translateY(2px) scale(0.98);
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
 }

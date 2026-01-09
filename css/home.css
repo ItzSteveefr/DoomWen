@@ -345,3 +345,13 @@
         display: none !important;
     }
 }
+
+.desktop-padding {
+    padding-left: 15rem;
+}
+
+@media (max-width: 1000px) {
+    .desktop-padding {
+        padding-left: 0 !important;
+    }
+}

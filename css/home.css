@@ -342,6 +342,6 @@
 
 @media (max-width: 768px) {
     .hide-on-phone {
-        display: none;
+        display: none !important;
     }
 }

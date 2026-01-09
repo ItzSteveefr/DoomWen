@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1,
         ease: "power4.out",
       },
-      "-=0.9"
+      "-=0.9",
     );
 
     headerTl.to(
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power4.out",
         stagger: 0.1,
       },
-      "-=0.9"
+      "-=0.9",
     );
 
     headerTl.to(
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.75,
         ease: "power4.out",
       },
-      "-=0.9"
+      "-=0.9",
     );
   };
 
@@ -118,4 +118,45 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     initAnimations();
   });
+});
+
+const initHoverAnimations = () => {
+  if (window.innerWidth <= 1000) return;
+
+  document.querySelectorAll(".work-item").forEach((item) => {
+    const overlay = item.querySelector(".work-hover-overlay");
+    const button = item.querySelector(".work-hover-btn");
+
+    gsap.set(overlay, { y: 30, opacity: 0 });
+    gsap.set(button, { y: 10, opacity: 0 });
+
+    const hoverTl = gsap.timeline({ paused: true });
+
+    hoverTl
+      .to(overlay, {
+        y: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power3.out",
+      })
+      .to(
+        button,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.25,
+          ease: "power3.out",
+        },
+        "-=0.15",
+      );
+
+    item.addEventListener("mouseenter", () => hoverTl.play());
+    item.addEventListener("mouseleave", () => hoverTl.reverse());
+  });
+};
+
+initHoverAnimations();
+
+window.addEventListener("resize", () => {
+  initHoverAnimations();
 });

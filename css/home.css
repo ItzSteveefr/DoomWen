@@ -453,8 +453,9 @@
     }
 }
 
-/* Mobile "More details" button inside featured images */
+/* Mobile-only "More details" button */
 @media (max-width: 1000px) {
+    /* Ensure image wrapper can anchor absolute button */
     .featured-title-img {
         position: relative;
     }
@@ -462,17 +463,28 @@
     .mobile-details-btn {
         position: absolute;
         bottom: 0.75em;
-        left: 0.75em;
+        right: 0.75em;
 
-        padding: 0.25em 0.5em;
+        padding: 0.25em 0.55em;
         border-radius: 0.25em;
         width: max-content;
 
-        background-color: var(--fg);
+        background-color: rgba(0, 0, 0, 0.82);
         color: var(--bg);
 
-        margin: 0;
         z-index: 5;
+
+        /* subtle depth */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+
+        /* mobile interaction */
+        transition:
+            transform 0.12s ease,
+            box-shadow 0.12s ease,
+            background-color 0.12s ease;
+
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
     }
 
     .mobile-details-btn a {
@@ -482,10 +494,19 @@
         align-items: center;
         gap: 0.4em;
         font-size: 0.75rem;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* Press / tap animation */
+    .mobile-details-btn:active {
+        transform: translateY(2px) scale(0.98);
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
 }
 
-/* Ensure it never appears on desktop */
+/* Explicitly hide on desktop */
 @media (min-width: 1001px) {
     .mobile-details-btn {
         display: none !important;

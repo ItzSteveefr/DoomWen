@@ -356,22 +356,34 @@
     }
 }
 
-.button {
-    position: relative;
+/* Button wrapper (centering helper) */
+.button-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 40px auto 20px auto;
     width: 100%;
 }
 
+/* Button container */
+.button {
+    position: relative;
+    display: inline-block;
+    margin: 40px auto 20px auto;
+}
+
+/* Button itself */
 .button a {
-    color: var(--fg);
+    display: inline-block;
+    position: relative;
+
+    padding: 6px 16px;
+
     font-family: Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
-    text-align: center;
     text-decoration: none;
+    text-align: center;
+    color: var(--fg);
+
     background: linear-gradient(
         45deg,
         var(--accent1),
@@ -379,31 +391,23 @@
         var(--accent3),
         var(--accent4)
     );
-    display: block;
-    position: relative;
-    padding: 6px 16px;
+
+    border-radius: 5px;
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-shadow: 0px 1px 0px #000;
-    filter: dropshadow(color=#000, offx=0px, offy=1px);
 
-    -webkit-box-shadow:
-        inset 0 1px 0 var(--fg),
-        0 4px 0 var(--accent4);
-    -moz-box-shadow:
-        inset 0 1px 0 var(--fg),
-        0 4px 0 var(--accent4);
     box-shadow:
         inset 0 1px 0 var(--fg),
         0 4px 0 var(--accent4);
 
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    will-change: transform;
 }
 
+/* Press effect */
 .button a:active {
-    top: 4px;
+    transform: translateY(4px);
+
     background: linear-gradient(
         45deg,
         var(--accent2),
@@ -412,34 +416,26 @@
         var(--accent1)
     );
 
-    -webkit-box-shadow:
-        inset 0 1px 0 var(--fg),
-        inset 0 -2px 0 var(--accent4);
-    -moz-box-shadow:
-        inset 0 1px 0 var(--fg),
-        inset 0 -2px 0 var(--accent4);
     box-shadow:
         inset 0 1px 0 var(--fg),
         inset 0 -2px 0 var(--accent4);
 }
 
-.button:after {
+/* Shadow base under button */
+.button::after {
     content: "";
-    height: 100%;
-    width: 100%;
-    padding: 2px;
     position: absolute;
-    bottom: -7px;
-    left: -2px;
+    inset: 0;
+    transform: translate(-2px, 6px);
     z-index: -1;
+
     background-color: var(--bg2);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
 }
 
+/* Hide on desktop (your original behavior) */
 @media (min-width: 1001px) {
-    .button {
+    .button-wrapper {
         display: none !important;
     }
 }

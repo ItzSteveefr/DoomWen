@@ -119,35 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
     initAnimations();
   });
 });
-
-const initHoverAnimations = () => {
-  if (window.innerWidth <= 1000) return;
-
-  document.querySelectorAll(".work-item").forEach((item) => {
-    const overlay = item.querySelector(".work-hover-overlay");
-    const button = item.querySelector(".work-hover-btn");
-
-    gsap.set(button, {
-      opacity: 0,
-      y: 12,
-    });
-
-    const hoverTl = gsap.timeline({
-      paused: true,
-      defaults: { ease: "power4.out" },
-    });
-
-    hoverTl.to(button, {
-      opacity: 1,
-      y: 0,
-      duration: 0.45,
-    });
-
-    item.addEventListener("mouseenter", () => hoverTl.play());
-    item.addEventListener("mouseleave", () => hoverTl.reverse());
-  });
-};
-
-initHoverAnimations();
-
-window.addEventListener("resize", initHoverAnimations);
